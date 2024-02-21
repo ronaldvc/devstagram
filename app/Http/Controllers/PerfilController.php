@@ -6,8 +6,10 @@ use App\Models\User;
 use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
+
+require './vendor/autoload.php';
 use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 class PerfilController extends Controller
 {
@@ -24,11 +26,12 @@ class PerfilController extends Controller
     public function store(Request $request)
     {
         // Modificar el Password
-/*
+        /*
         if (!auth()->attempt($request->only('password'))) {
             return back()->with('mensaje', 'Credenciales Incorrectas');
         }
-*/
+        */
+        
         // Modificar el Request
         $request->request->add(['username' => Str::slug($request->username)]);
 

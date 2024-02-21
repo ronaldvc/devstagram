@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3684819e11aa72c7b5451404fee17734",
+    "content-hash": "bfc47624da7901dea84bbad9278947bd",
     "packages": [
         {
             "name": "brick/math",
@@ -1099,16 +1099,16 @@
         },
         {
             "name": "intervention/image",
-            "version": "3.2.4",
+            "version": "3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "e04c51b367fad2b010758e74528041484cd8d2f7"
+                "reference": "fd09f59b09b3f1ee9ad90a893230781f03d1e33d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/e04c51b367fad2b010758e74528041484cd8d2f7",
-                "reference": "e04c51b367fad2b010758e74528041484cd8d2f7",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/fd09f59b09b3f1ee9ad90a893230781f03d1e33d",
+                "reference": "fd09f59b09b3f1ee9ad90a893230781f03d1e33d",
                 "shasum": ""
             },
             "require": {
@@ -1119,7 +1119,8 @@
             "require-dev": {
                 "mockery/mockery": "^1.6",
                 "phpstan/phpstan": "^1",
-                "phpunit/phpunit": "^9"
+                "phpunit/phpunit": "^9",
+                "squizlabs/php_codesniffer": "^3.8"
             },
             "suggest": {
                 "ext-exif": "Recommended to be able to read EXIF data properly."
@@ -1153,7 +1154,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Intervention/image/issues",
-                "source": "https://github.com/Intervention/image/tree/3.2.4"
+                "source": "https://github.com/Intervention/image/tree/3.3.1"
             },
             "funding": [
                 {
@@ -1165,7 +1166,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-01-14T07:47:00+00:00"
+            "time": "2024-01-22T17:56:18+00:00"
         },
         {
             "name": "laravel/framework",
@@ -8353,7 +8354,8 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.1"
+        "php": "^8.1",
+        "ext-gd": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.6.0"
