@@ -7,9 +7,10 @@ use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
 
-require './vendor/autoload.php';
-use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Imagick\Driver;
+//require './vendor/autoload.php';
+//use Intervention\Image\ImageManager;
+//use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Facades\Image;
 
 class PerfilController extends Controller
 {
@@ -31,7 +32,7 @@ class PerfilController extends Controller
             return back()->with('mensaje', 'Credenciales Incorrectas');
         }
         */
-        
+
         // Modificar el Request
         $request->request->add(['username' => Str::slug($request->username)]);
 
@@ -44,9 +45,16 @@ class PerfilController extends Controller
 
             $nombreImagen = Str::uuid() . "." . $imagen->extension();
 
+            /*
+            // Libraries Intervention 3.*
             $manager = new ImageManager(new Driver);
             $imagenServidor = $manager::imagick()->read($imagen);
-            $imagenServidor->resize(1000, 1000);
+            $imagenServidor->resize(1000,1000);
+            */
+
+            // Libraries Intervention 2.7
+            $imagenServidor = Image::make($imagen);
+            $imagenServidor->fit(1000, 1000);
 
             $imagenPath = public_path('perfiles') . '/' . $nombreImagen;
 
